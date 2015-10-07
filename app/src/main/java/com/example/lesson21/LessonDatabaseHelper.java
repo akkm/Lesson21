@@ -16,7 +16,7 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "lesson.db";
 
     // TODO DBヘルパーの実装が終わったらfalseをtrueにしてください
-    public static final boolean LESSON_DONE = true;
+    public static final boolean LESSON_DONE = false;
 
     public LessonDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
