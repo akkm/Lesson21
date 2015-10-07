@@ -1,8 +1,6 @@
 package com.example.lesson21;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -23,11 +21,10 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // アプリでこのクラスのコンストラクタが初めて呼ばれる時に呼ばれます。
+        // アプリでこのクラスが初めて使われる時に呼ばれます。
         // TODO create tableしてみましょう
         // TODO create table user (id integer PRIMARY KEY AUTOINCREMENT, name text);
 
-        db.execSQL("create table user (id integer PRIMARY KEY AUTOINCREMENT, name text);");
 
         // TODO ここまで
     }
@@ -41,9 +38,6 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         // TODO insert してみましょう
 
-        ContentValues values = new ContentValues();
-        values.put("name", name);
-        db.insert("user", "", values);
 
         // TODO ここまで
         db.close();
@@ -54,12 +48,6 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         // TODO select all してみましょう (動作確認後、orderByの動作確認も行う）
 
-        Cursor cursor = db.query("user", new String[]{"id", "name"}, null, null, null, null, "id");
-        boolean hasNext = cursor.moveToFirst();
-        while (hasNext) {
-            list.add(cursor.getString(cursor.getColumnIndex("name")));
-            hasNext = cursor.moveToNext();
-        }
 
         // TODO ここまで
         db.close();

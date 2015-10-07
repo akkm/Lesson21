@@ -1,10 +1,8 @@
 package com.example.lesson21;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,14 +15,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO shareEditTextにある文章を添付し、明示的Intentを使ってSubActivityを起動してみる
-
-                EditText shareEditText = (EditText) findViewById(R.id.shareEditText);
-                String shareText = shareEditText.getText().toString();
-
-                Intent intent = new Intent(MainActivity.this, SubActivity.class);
-                intent.putExtra("text", shareText);
-
-                startActivity(intent);
+                // TODO Extra:"text",shareText
 
             }
         });
@@ -33,16 +24,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO shareEditTextにある文章を添付し、暗黙的Intentを使ってシェアしてみる
+                // TODO Action:Intent.ACTION_SEND Type:"text/plain" Extra:Intent.EXTRA_TEXT,shareText
 
-                EditText shareEditText = (EditText) findViewById(R.id.shareEditText);
-                String shareText = shareEditText.getText().toString();
-
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, shareText);
-
-                startActivity(intent);
             }
         });
 
