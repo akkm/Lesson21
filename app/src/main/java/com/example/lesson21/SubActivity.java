@@ -22,6 +22,7 @@ public class SubActivity extends AppCompatActivity {
             Toast.makeText(this, shareText + " を受け取りました", Toast.LENGTH_SHORT).show();
         }
 
+        if (!LessonDatabaseHelper.LESSON_DONE) return;
         LessonDatabaseHelper helper = new LessonDatabaseHelper(this);
 
         List<String> nameList = helper.selectAll();
