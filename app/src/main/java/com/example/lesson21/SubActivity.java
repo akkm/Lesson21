@@ -17,7 +17,7 @@ public class SubActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sub);
 
         Intent intent = getIntent();
-        String shareText = intent.getStringExtra("shareText");
+        String shareText = intent.getStringExtra("text");
         if (shareText != null) {
             Toast.makeText(this, shareText + " を受け取りました", Toast.LENGTH_SHORT).show();
         }

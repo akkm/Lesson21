@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 String shareText = shareEditText.getText().toString();
 
                 Intent intent = new Intent(MainActivity.this, SubActivity.class);
-                intent.putExtra("shareText", shareText);
+                intent.putExtra("text", shareText);
 
                 startActivity(intent);
 
