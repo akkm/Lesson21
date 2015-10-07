@@ -23,7 +23,7 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // アプリでこのクラスのコンストラクタが初めて呼ばれる時に呼ばれます。
+        // アプリでこのクラスが初めて使われる時に呼ばれます。
         // TODO create tableしてみましょう
         // TODO create table user (id integer PRIMARY KEY AUTOINCREMENT, name text);
 
