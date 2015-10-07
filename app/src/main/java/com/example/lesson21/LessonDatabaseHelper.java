@@ -25,9 +25,9 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // アプリでこのクラスのコンストラクタが初めて呼ばれる時に呼ばれます。
         // TODO create tableしてみましょう
-        // TODO create table lesson (id integer PRIMARY KEY AUTOINCREMENT, name text);
+        // TODO create table user (id integer PRIMARY KEY AUTOINCREMENT, name text);
 
-        db.execSQL("create table lesson (id integer PRIMARY KEY AUTOINCREMENT, name text);");
+        db.execSQL("create table user (id integer PRIMARY KEY AUTOINCREMENT, name text);");
 
         // TODO ここまで
     }
@@ -43,7 +43,7 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put("name", name);
-        db.insert("lesson", "", values);
+        db.insert("user", "", values);
 
         // TODO ここまで
         db.close();
@@ -52,9 +52,9 @@ public class LessonDatabaseHelper extends SQLiteOpenHelper {
     public List<String> selectAll() {
         List<String> list = new ArrayList<String>();
         SQLiteDatabase db = getWritableDatabase();
-        // TODO select all してみましょう
+        // TODO select all してみましょう (動作確認後、orderByの動作確認も行う）
 
-        Cursor cursor = db.query("lesson", new String[]{"id", "name"}, null, null, null, null, "name");
+        Cursor cursor = db.query("user", new String[]{"id", "name"}, null, null, null, null, "id");
         boolean hasNext = cursor.moveToFirst();
         while (hasNext) {
             list.add(cursor.getString(cursor.getColumnIndex("name")));
